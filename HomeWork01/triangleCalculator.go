@@ -2,9 +2,7 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"math"
-	"strconv"
 )
 
 func HypotenuseCalculate(a float64, b float64) float64 {
@@ -23,29 +21,18 @@ func PerimeterCalculate(a float64, b float64, c float64) float64 {
 }
 
 func main() {
+
 	fmt.Println("Программа находит площадь, периметр, и гипотенузу прямоугольного треугольника исходя из его катетов.")
-	var (
-		answerA string
-		answerB string
-	)
+	var CathetA, CathetB float64
 
 	fmt.Println("Введите длину катета a: ")
-	fmt.Scanln(&answerA)
-	CathetA, err := strconv.Atoi(answerA)
-	if err != nil {
-		log.Fatalln(err)
-	}
-
+	fmt.Scanln(&CathetA)
 	fmt.Println("Введите длину катета b: ")
-	fmt.Scanln(&answerB)
-	CathetB, err := strconv.Atoi(answerB)
-	if err != nil {
-		log.Fatalln(err)
-	}
+	fmt.Scanln(&CathetB)
 
-	hypotenuse := HypotenuseCalculate(float64(CathetA), float64(CathetB))
-	square := SquareCalculate(float64(CathetA), float64(CathetB))
-	perimeter := PerimeterCalculate(float64(CathetA), float64(CathetB), hypotenuse)
+	hypotenuse := HypotenuseCalculate(CathetA, CathetB)
+	square := SquareCalculate(CathetA, CathetB)
+	perimeter := PerimeterCalculate(CathetA, CathetB, hypotenuse)
 
 	fmt.Println("Длина гипотенузы: ", hypotenuse)
 	fmt.Println("Площадь треугольника: ", square)

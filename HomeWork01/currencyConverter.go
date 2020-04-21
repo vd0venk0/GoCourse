@@ -6,8 +6,9 @@ import (
 	"strconv"
 )
 
+const course int = 75
+
 func main() {
-	const course int = 75
 	var answer string
 	fmt.Println("Программа конвертирует доллары в рубли по фиксированному курсу.")
 	fmt.Println("Введите сумму в долларах для конвертации : ")
